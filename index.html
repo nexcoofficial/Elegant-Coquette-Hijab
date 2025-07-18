@@ -1,256 +1,499 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>NESHIJAB – Elegant Coquette Hijab</title>
-  <meta name="description" content="Hijab premium NESHIJAB. Voal adem, desain elegan. Pilihan warna merah & putih. Pesan sekarang.">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --gold: #d4af37;
-      --teal: #2b6777;
-      --radius: 18px;
-      --font: 'Inter', Arial, sans-serif;
-      --shadow: 0 4px 24px 0 rgba(44,103,119,0.09);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font);
-      background: linear-gradient(120deg, #fffbe8 0%, #e9f3f7 100%);
-      color: #1b1b1b;
-      min-height: 100vh;
-    }
-    header {
-      display: flex;justify-content: center;align-items: center;gap: 1rem;
-      padding: 1.2rem 0 1rem 0;
-      background: #fff;
-      border-bottom: 1.5px solid #e4e4e4;
-    }
-    .logo {
-      width: 42px;height: 42px;border-radius: 50%;
-      object-fit: cover;border: 2px solid var(--gold);
-    }
-    .brand { font-weight: 700;color: var(--teal);font-size: 1.5rem;letter-spacing: 0.5px;}
-
-    .hero {
-      max-width: 420px;
-      margin: 2.5rem auto 0 auto;
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      padding: 2.1rem 1.2rem;
-      position: relative;
-    }
-    .slider { position: relative; }
-    .slider img {
-      width: 94%; max-width: 340px; aspect-ratio: 1/1.08;
-      border-radius: 15px; object-fit: cover;
-      box-shadow: 0 2px 14px 0 rgba(44,103,119,0.08);
-      margin-bottom: 0.9em;
-      transition: opacity .4s;
-      background: #faf8f7;
-    }
-    .slider-dots {
-      display: flex;gap: 6px;justify-content: center;margin: 0 0 1em 0;
-    }
-    .dot {
-      width: 11px;height: 11px;border-radius: 50%;
-      background: #eee;border: 2px solid var(--gold);cursor: pointer;
-      transition: background .2s;
-    }
-    .dot.active { background: var(--gold); }
-
-    .hero-title { font-size: 1.45rem;font-weight: 700;color: var(--gold);margin-bottom: 0.4em;}
-    .hero-desc { font-size: 1rem;color: var(--teal);margin-bottom: 1em;}
-    .hero-price { font-size: 1.14rem;font-weight: 600; color: var(--teal);margin-bottom: 1.1em;}
-    .cta-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, var(--gold), var(--teal));
-      color: #fff; font-weight: 600; font-size: 1rem;
-      padding: 0.7em 2.1em; border-radius: 2em; border: none; cursor: pointer;
-      box-shadow: 0 2px 8px 0 rgba(44,103,119,0.09);
-      transition: background .2s, transform .17s;
-    }
-    .cta-btn:hover { background: linear-gradient(90deg,var(--teal),var(--gold));transform: scale(1.04); }
-    .product-info {
-      margin: 2.5rem auto 0 auto; max-width: 420px; background: #fff;
-      border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 1.3rem 1.2rem 1.1rem 1.2rem; font-size: 1.01rem;
-    }
-    .info-list {list-style: none;}
-    .info-list li {margin-bottom: 0.6em;}
-    .warna {
-      margin: 2rem auto 0 auto; max-width: 420px; background: #fff;
-      border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 1.2rem;
-    }
-    .warna-title { color: var(--teal); font-size: 1.06rem; font-weight: 600; margin-bottom: 0.7em;}
-    .warna-opsi { display: flex; gap: 1.4rem; justify-content: center; }
-    .warna-item {
-      cursor: pointer; text-align: center;
-      border-radius: 10px; padding: 0.5em 0.5em; transition: box-shadow 0.2s, border 0.2s;
-      border: 2px solid transparent;
-    }
-    .warna-item.active, .warna-item:hover { border: 2px solid var(--gold);}
-    .warna-thumb {
-      width: 46px;height: 46px;border-radius: 8px;object-fit: cover;
-      border: 1.5px solid var(--gold);
-      background: #f6f6f6; margin-bottom: 0.25em;
-    }
-    .warna-label { font-size: 0.97rem; font-weight: 600; color: var(--teal); }
-
-    .orderbox {
-      margin: 2.2rem auto 1.4rem auto; max-width: 420px; background: #fff;
-      border-radius: var(--radius); box-shadow: var(--shadow);padding: 1.3rem 1.1rem;
-      text-align: center;
-    }
-    .orderbox-title { color: var(--gold); font-size: 1.07rem; font-weight: 700; margin-bottom: 1.1em;}
-    .orderonline-embed-form { margin: 0 auto; }
-    footer {
-      text-align: center; color: var(--teal); font-size: 0.97rem;
-      margin-bottom: 1.2rem; margin-top: 2.2rem;
-    }
-    @media (max-width: 520px) {
-      .hero, .product-info, .warna, .orderbox {padding: 1rem 0.3rem;}
-      .slider img { width: 99vw; }
-      header { flex-direction: column; gap: 0.5rem;}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="https://cdn.orderonline.id/uploads/images_4982411751221817637.jpeg" alt="Logo" class="logo">
-    <span class="brand">NESHIJAB</span>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="slider" id="slider">
-        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r992-lzlm89an6fa3cb@resize_w450_nl.webp" class="slide" style="opacity:1" alt="Hijab 1" loading="lazy">
-        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzlm89an7tuj26.webp" class="slide" style="opacity:0;position:absolute;left:0;top:0;" alt="Hijab 2" loading="lazy">
-        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r991-lzlm89an98eze8.webp" class="slide" style="opacity:0;position:absolute;left:0;top:0;" alt="Hijab 3" loading="lazy">
-        <div class="slider-dots">
-          <span class="dot active" data-idx="0"></span>
-          <span class="dot" data-idx="1"></span>
-          <span class="dot" data-idx="2"></span>
-        </div>
-      </div>
-      <div class="hero-title">Elegant Coquette Hijab</div>
-      <div class="hero-desc">Hijab voal premium, desain mewah, adem & ringan, ideal untuk harian & acara spesial.</div>
-      <div class="hero-price">Rp 154.000</div>
-      <button class="cta-btn" id="openOrder">Pesan Sekarang</button>
-    </section>
-    <section class="product-info">
-      <ul class="info-list">
-        <li><b>Bahan:</b> Voal Premium</li>
-        <li><b>Ukuran:</b> 115x115 cm</li>
-        <li><b>Berat:</b> 300 gram</li>
-        <li><b>Deskripsi:</b> Nyaman dipakai seharian, tetap adem walau aktif 17-an.</li>
-      </ul>
-    </section>
-    <section class="warna">
-      <div class="warna-title">Varian Warna</div>
-      <div class="warna-opsi" id="warnaGallery">
-        <div class="warna-item active" data-warna="MERAH">
-          <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzlm89an7tuj26@resize_w450_nl.webp" class="warna-thumb" alt="Merah">
-          <div class="warna-label">MERAH</div>
-        </div>
-        <div class="warna-item" data-warna="PUTIH">
-          <img src="https://cdn.orderonline.id/uploads/images_4982411751221817637.jpeg" class="warna-thumb" alt="Putih">
-          <div class="warna-label">PUTIH</div>
-        </div>
-      </div>
-    </section>
-    <section class="orderbox">
-      <div class="orderbox-title">Pesan Elegant Coquette Hijab</div>
-      <!-- OrderOnline Embed Code - v8.0.4 -->
-      <div>
-        <form class="orderonline-embed-form" data-username="mila" data-product-slug="elegant-coquette-hijab" data-product-id="68617f6d67421135c80a42c1" id="oo-embed-form-elegant-coquette-hijab-9249" data-origin="orderonline">
-          <div class="ooef-loader">
-            <style>.ooef-loader{display:none}</style>
-            <div>Loading...</div>
-          </div>
-        </form>
-      </div>
-      <script>
-        if (typeof xLogError != 'function') {
-          var xLogError = function (error) {
-            var req = new XMLHttpRequest();
-            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
-            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
-            req.open('POST', 'https://api.orderonline.id/log', true);
-            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            req.send(params);
-          };
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Coquette Hijab - Spesial Kemerdekaan RI ke-80</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --merah-ri: #DC2626;
+            --putih-ri: #FFFFFF;
+            --gold-ri: #FCD34D;
         }
-        try {
-          if (typeof xEmbedScript != 'function') {
-            var xEmbedScript = function () {
-              !function(w, d, e, v, id, t, s) {
-                if (d.getElementById(id)) return;
-                t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
-                s = d.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s);
-              }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
-            };
-          }
-          if (typeof xEmbedInit != 'function') {
-            var xEmbedInit = function (w, n) {
-              if (w.ooe) return;
-              n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
-              if (!w._ooe) w._ooe = n;
-              n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
-            };
-          }
-          xEmbedInit(window);
-          ooe('setup', 'redirect', 'https://mila.orderonline.id');
-          ooe('init', '5f1a7b8fa9bf807da24d83bb', '68617f6d67421135c80a42c1', '68617f6d67421135c80a42c2', 'oo-embed-form-elegant-coquette-hijab-9249', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
-          if (!window.jQuery) {
-            !function(w, d, e, v, id, t, s) {
-              if (d.getElementById(id)) return;
-              t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
-              t.addEventListener('load', xEmbedScript);
-              s = d.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t, s);
-            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
-          } else { xEmbedScript(); }
-        } catch (e) { xLogError(e); throw e; }
-      </script>
-      <!-- End OrderOnline Embed Code -->
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 50%, #fef2f2 100%);
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .flag-gradient {
+            background: linear-gradient(135deg, var(--merah-ri) 0%, #B91C1C 100%);
+        }
+        
+        .gold-accent {
+            background: linear-gradient(135deg, var(--gold-ri) 0%, #F59E0B 100%);
+        }
+        
+        .transparent-timer {
+            background-color: rgba(220, 38, 38, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .timer-unit {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 8px;
+            min-width: 50px;
+        }
+        
+        .timer-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .timer-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(252, 211, 77, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+        }
+        
+        .floating-flag {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        .gallery-thumbnail {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .color-option.active {
+            border-color: var(--merah-ri);
+            transform: scale(1.1);
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, var(--gold-ri) 0%, #F59E0B 100%);
+            clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+            padding: 10px 30px 10px 20px;
+            color: #92400E;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="font-display text-2xl font-bold text-gray-800">
+                    Elegant Coquette Hijab
+                </h1>
+                <div class="hidden md:flex items-center space-x-2">
+                    <span class="text-sm text-gray-600">Spesial Kemerdekaan RI ke-80</span>
+                    <i class="fas fa-flag text-red-600"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center bg-white rounded-full px-4 py-2 shadow-lg mb-4">
+                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                    <span class="text-sm font-semibold text-gray-700">Limited Edition - HUT RI ke-80</span>
+                    <i class="fas fa-star text-yellow-500 ml-2"></i>
+                </div>
+                <h2 class="font-display text-4xl md:text-6xl font-bold text-gray-800 mb-4">
+                    Elegant Coquette Hijab
+                </h2>
+                <p class="text-xl text-gray-600 mb-6">
+                    Koleksi Premium Spesial Kemerdekaan Indonesia
+                </p>
+            </div>
+
+            <!-- Urgency Timer -->
+            <div class="max-w-md mx-auto mb-8">
+                <div class="transparent-timer">
+                    <h3 class="text-center font-display text-xl font-bold text-white mb-4">
+                        ⏰ PROMO HUT RI - Hanya 2 Jam Lagi!
+                    </h3>
+                    <div id="countdown" class="flex justify-center space-x-3">
+                        <div class="timer-unit text-center">
+                            <div id="hours" class="timer-value">01</div>
+                            <div class="timer-label">Jam</div>
+                        </div>
+                        <div class="text-white text-2xl font-bold pt-2">:</div>
+                        <div class="timer-unit text-center">
+                            <div id="minutes" class="timer-value">59</div>
+                            <div class="timer-label">Menit</div>
+                        </div>
+                        <div class="text-white text-2xl font-bold pt-2">:</div>
+                        <div class="timer-unit text-center">
+                            <div id="seconds" class="timer-value">59</div>
+                            <div class="timer-label">Detik</div>
+                        </div>
+                    </div>
+                    <p class="text-center text-white text-sm mt-3 opacity-80">
+                        Diskon akan berakhir setelah waktu habis!
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-  <footer>
-    &copy; 2025 NESHIJAB | Info: <a href="https://wa.me/6281234567890" style="color:var(--teal);text-decoration:none;">0821-2345-67890</a>
-  </footer>
-  <script>
-    // Slider
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    let idx = 0, timer;
-    function show(idxShow) {
-      slides.forEach((img,i)=>img.style.opacity=i===idxShow?'1':'0');
-      dots.forEach((d,i)=>d.classList.toggle('active',i===idxShow));
-      idx = idxShow;
-    }
-    dots.forEach((d, i) => d.onclick=()=>{show(i);reset();});
-    function next(){ idx=(idx+1)%slides.length; show(idx);}
-    function reset(){ clearInterval(timer); timer = setInterval(next,3500);}
-    reset();
 
-    // Warna
-    const warnaItems = document.querySelectorAll('.warna-item');
-    warnaItems.forEach(item => {
-      item.onclick = () => {
-        warnaItems.forEach(i=>i.classList.remove('active'));
-        item.classList.add('active');
-      }
-    });
+    <!-- Product Section -->
+    <section class="py-12 md:py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Product Gallery -->
+                <div>
+                    <div class="relative bg-white rounded-lg shadow-xl overflow-hidden">
+                        <img id="main-image" src="https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzlm89an7tuj26.webp" 
+                             alt="Elegant Coquette Hijab" class="w-full h-96 md:h-[500px] object-cover">
+                        <div class="absolute top-4 right-4 floating-flag">
+                            <div class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                -20% HUT RI
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-5 gap-2 mt-4">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzlm89an7tuj26.webp" 
+                             class="gallery-thumbnail rounded-lg w-full h-20 object-cover border-2 border-red-500"
+                             onclick="changeImage(this.src)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r991-lzlm89an98eze8.webp" 
+                             class="gallery-thumbnail rounded-lg w-full h-20 object-cover"
+                             onclick="changeImage(this.src)">
+                        <img src="https://cdn.orderonline.id/uploads/images_4982411751221817637.jpeg" 
+                             class="gallery-thumbnail rounded-lg w-full h-20 object-cover"
+                             onclick="changeImage(this.src)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r992-lzlm89an6fa3cb@resize_w450_nl.webp" 
+                             class="gallery-thumbnail rounded-lg w-full h-20 object-cover"
+                             onclick="changeImage(this.src)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzlm89an7tuj26@resize_w450_nl.webp" 
+                             class="gallery-thumbnail rounded-lg w-full h-20 object-cover"
+                             onclick="changeImage(this.src)">
+                    </div>
+                </div>
 
-    // Scroll to order form
-    document.getElementById('openOrder').onclick = () => {
-      document.querySelector('.orderbox').scrollIntoView({behavior:'smooth'});
-    }
-  </script>
+                <!-- Product Details -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="price-tag text-xl md:text-2xl">
+                            Rp 155.000
+                        </div>
+                        <span class="ml-4 text-gray-500 line-through">Rp 194.000</span>
+                    </div>
+                    
+                    <h1 class="font-display text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                        Elegant Coquette Hijab
+                    </h1>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Hijab premium dengan desain coquette feminin, material katun premium yang nyaman dipakai seharian. 
+                        Spesial edisi kemerdekaan RI ke-80 dengan motif merah-putih elegan.
+                    </p>
+
+                    <!-- Color Selection -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-gray-800 mb-3">Pilih Warna:</h3>
+                        <div class="flex space-x-3">
+                            <div class="color-option bg-red-600 active" data-color="merah" onclick="selectColor(this, 'merah')"></div>
+                            <div class="color-option bg-white border-2 border-gray-300" data-color="putih" onclick="selectColor(this, 'putih')"></div>
+                        </div>
+                    </div>
+
+                    <!-- Size Guide -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-gray-800 mb-3">Detail Ukuran:</h3>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Panjang: ± 180cm</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Lebar: ± 70cm</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Material: Katun Premium</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>Tidak menerawang & adem</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="mb-8">
+                        <h3 class="font-semibold text-gray-800 mb-3">Deskripsi Produk:</h3>
+                        <div class="prose prose-sm text-gray-600">
+                            <p>Elegant Coquette Hijab adalah pilihan sempurna untuk gaya kasual modern Anda. 
+                            Dengan desain coquette yang feminin dan elegan, hijab ini cocok untuk berbagai kesempatan - 
+                            dari hangout santai hingga acara formal.</p>
+                            
+                            <p class="mt-4"><strong>Fitur Utama:</strong></p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Material katun premium yang adem dan nyaman</li>
+                                <li>Desain motif merah-putih eksklusif HUT RI ke-80</li>
+                                <li>Ukuran pas untuk semua bentuk wajah</li>
+                                <li>Warna tahan lama tidak mudah luntur</li>
+                                <li>Easy care - mudah diperawat</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Order Form -->
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                        <h3 class="font-display text-xl font-bold text-gray-800 mb-4 text-center">
+                            🛒 Pesan Sekarang - Stok Terbatas!
+                        </h3>
+                        <!-- OrderOnline Embed Code - v8.0.4 -->
+                        <div class="ooef">
+                            <form class="orderonline-embed-form" data-username="mila" data-product-slug="elegant-coquette-hijab" data-product-id="68617f6d67421135c80a42c1" id="oo-embed-form-elegant-coquette-hijab-1054" data-origin="orderonline">
+                                <div class="ooef-loader">
+                                    <style>
+                                        .ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}
+                                        @keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                        @-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                        .ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}
+                                        .ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}
+                                        .ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}
+                                        @-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                                        @keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                                    </style>
+                                    <div aria-live="polite" role="status">
+                                        <div>Loading...</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <script>
+                            if (typeof xLogError != 'function') {
+                                var xLogError = function (error) {
+                                    var req = new XMLHttpRequest();
+                                    var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                                    var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                                    req.open('POST', 'https://api.orderonline.id/log', true);
+                                    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                    req.send(params);
+                                };
+                            }
+                            try {
+                                if (typeof xEmbedScript != 'function') {
+                                    var xEmbedScript = function () {
+                                        !function(w, d, e, v, id, t, s) {
+                                            if (d.getElementById(id)) return;
+                                            t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                            s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                                        }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                                    };
+                                }
+                                if (typeof xEmbedInit != 'function') {
+                                    var xEmbedInit = function (w, n) {
+                                        if (w.ooe) return;
+                                        n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                                        if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                                    };
+                                }
+                                xEmbedInit(window);
+                                ooe('setup', 'redirect', 'https://mila.orderonline.id');
+                                ooe('init', '5f1a7b8fa9bf807da24d83bb', '68617f6d67421135c80a42c1', '68617f6d67421135c80a42c2', 'oo-embed-form-elegant-coquette-hijab-1054', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                                if (!window.jQuery) {
+                                    !function(w, d, e, v, id, t, s) {
+                                        if (d.getElementById(id)) return;
+                                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                        t.addEventListener('load', xEmbedScript);
+                                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                                    }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                                } else {
+                                    xEmbedScript();
+                                }
+                            } catch (e) {
+                                xLogError(e); throw e;
+                            }
+                        </script>
+                        <!-- End OrderOnline Embed Code -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="Product Image" class="max-w-full max-h-full">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center items-center mb-4">
+                <i class="fas fa-flag text-red-500 text-2xl mr-3"></i>
+                <span class="text-lg font-semibold">Elegant Coquette Hijab - HUT RI ke-80</span>
+                <i class="fas fa-star text-yellow-500 text-2xl ml-3"></i>
+            </div>
+            <p class="text-gray-400">
+                &copy; 2025 Mila Collection. Spesial Kemerdekaan Indonesia ke-80.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            // Set target to 2 hours from now
+            const targetDate = now + (2 * 60 * 60 * 1000);
+            const distance = targetDate - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            // Flash timer when under 5 minutes
+            if (distance < 300000) { // 5 minutes = 300000 ms
+                document.querySelector('.transparent-timer').style.animation = 'pulse 1s infinite';
+            }
+
+            // Stop timer when it reaches 0
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.querySelector('.transparent-timer h3').textContent = '⏰ PROMO TELAH BERAKHIR!';
+            }
+        }
+
+        // Add pulse animation for urgency
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.02); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Image Gallery
+        function changeImage(src) {
+            document.getElementById('main-image').src = src;
+            document.querySelectorAll('.gallery-thumbnail').forEach(img => {
+                img.classList.remove('border-red-500');
+            });
+            event.target.classList.add('border-red-500');
+        }
+
+        // Color Selection
+        function selectColor(element, color) {
+            document.querySelectorAll('.color-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            element.classList.add('active');
+            
+            // Change main image based on color
+            if (color === 'merah') {
+                document.getElementById('main-image').src = 'https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzlm89an7tuj26.webp';
+            } else if (color === 'putih') {
+                document.getElementById('main-image').src = 'https://cdn.orderonline.id/uploads/images_4982411751221817637.jpeg';
+            }
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightbox-image').src = src;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Add click handlers for gallery thumbnails
+        document.addEventListener('DOMContentLoaded', function() {
+            const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        openLightbox(this.src);
+                    }
+                });
+            });
+
+            // Add keyboard support for lightbox
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
